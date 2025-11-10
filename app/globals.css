@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Kawaii Kantaloupe Brand Colors - from logo */
+  --peach: #FFB8A3;
+  --peach-light: #FFD4C4;
+  --peach-dark: #FF9B7F;
+  --green: #7FD99F;
+  --green-light: #A3E8BB;
+  --green-dark: #5BC97E;
+  --pink: #FFB3D9;
+  --pink-light: #FFD1EC;
+  --pink-dark: #FF8FC4;
+  --orange: #FFB366;
+  --yellow: #FFE066;
+  --purple: #D4B3FF;
+  --white: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --gray: #E0E0E0;
+  --text-dark: #4A4A4A;
+
+  /* Theme variables */
+  --background: var(--peach-light);
+  --foreground: var(--text-dark);
+  --primary: var(--green);
+  --primary-hover: var(--green-dark);
+  --secondary: var(--pink);
+  --accent: var(--orange);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-peach: var(--peach);
+  --color-peach-light: var(--peach-light);
+  --color-peach-dark: var(--peach-dark);
+  --color-green: var(--green);
+  --color-green-light: var(--green-light);
+  --color-green-dark: var(--green-dark);
+  --color-pink: var(--pink);
+  --color-pink-light: var(--pink-light);
+  --color-pink-dark: var(--pink-dark);
+  --color-orange: var(--orange);
+  --color-yellow: var(--yellow);
+  --color-purple: var(--purple);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Kawaii styling utilities */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(127, 217, 159, 0.3);
+}
+
+.card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 3px solid var(--green);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
