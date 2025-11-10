@@ -17,9 +17,12 @@ export default function PackageCard({ packageProduct }: PackageCardProps) {
   const { addToCart } = useCart();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [justAdded, setJustAdded] = useState(false);
 
   const handleAddToCart = () => {
     addToCart(packageProduct, 1);
+    setJustAdded(true);
+    setTimeout(() => setJustAdded(false), 2000); // Reset after 2 seconds
   };
 
   // Use images array if available, otherwise fall back to single image
@@ -154,8 +157,9 @@ export default function PackageCard({ packageProduct }: PackageCardProps) {
             disabled={!packageProduct.inStock}
             fullWidth
             variant="secondary"
+            className={justAdded ? '!bg-green scale-105 shadow-2xl' : ''}
           >
-            Add Bundle to Cart
+            {justAdded ? '✓ Added to Cart!' : 'Add Bundle to Cart'}
           </Button>
 
           {!packageProduct.inStock && (

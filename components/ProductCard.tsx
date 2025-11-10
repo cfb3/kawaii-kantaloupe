@@ -16,9 +16,12 @@ export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [justAdded, setJustAdded] = useState(false);
 
   const handleAddToCart = () => {
     addToCart(product, 1);
+    setJustAdded(true);
+    setTimeout(() => setJustAdded(false), 2000); // Reset after 2 seconds
   };
 
   // Use images array if available, otherwise fall back to single image
@@ -132,8 +135,9 @@ export default function ProductCard({ product }: ProductCardProps) {
             onClick={handleAddToCart}
             disabled={!product.inStock || product.isPlaceholder}
             size="small"
+            className={justAdded ? '!bg-pink scale-105 shadow-2xl' : ''}
           >
-            {product.isPlaceholder ? 'Coming Soon' : 'Add to Cart'}
+            {product.isPlaceholder ? 'Coming Soon' : justAdded ? '✓ Added!' : 'Add to Cart'}
           </Button>
         </div>
 
