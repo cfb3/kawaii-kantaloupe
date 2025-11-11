@@ -15,7 +15,7 @@ export default function Card({
   padding = 'medium',
   borderColor = 'green'
 }: CardProps) {
-  const baseClasses = 'bg-white rounded-3xl shadow-md transition-all duration-300';
+  const baseClasses = 'bg-white rounded-3xl shadow-md transition-all duration-300 relative';
 
   const hoverClasses = hoverable
     ? 'hover:-translate-y-1 hover:shadow-xl'

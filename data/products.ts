@@ -37,9 +37,27 @@ export const tabaSquishy: Product[] = [
     id: "taba-bird-blue",
     name: "Blue Bird Taba Squishy",
     description: "Adorable blue bird-shaped taba squishy - soft and squishy!",
-    price: 5.0,
+    price: 3.0,
     category: "taba-squishy",
     image: "/images/products/taba/bird/blue.jpg",
+    inStock: true,
+  },
+  {
+    id: "taba-penguin-black",
+    name: "Black Penguin Taba Squishy",
+    description: "Adorable black penguin taba squishy - waddle into fun!",
+    price: 3.0,
+    category: "taba-squishy",
+    image: "/images/products/taba/penguin/black.jpg",
+    inStock: true,
+  },
+  {
+    id: "taba-piggie-pink",
+    name: "Pink Piggie Taba Squishy",
+    description: "Cute pink piggie taba squishy - oink oink!",
+    price: 3.0,
+    category: "taba-squishy",
+    image: "/images/products/taba/piggie/pink.jpg",
     inStock: true,
   },
   {
@@ -64,9 +82,18 @@ export const tabaSquishy: Product[] = [
     id: "taba-capybara-brown",
     name: "Brown Capybara Taba Squishy",
     description: "Chill capybara taba squishy - just vibing!",
-    price: 5.0,
+    price: 6.0,
     category: "taba-squishy",
     image: "/images/products/taba/capybara/brown.jpg",
+    inStock: true,
+  },
+  {
+    id: "taba-jellyfish-pink",
+    name: "Pink Jellyfish Taba Squishy",
+    description: "Adorable pink jellyfish taba squishy - so squishy!",
+    price: 6.0,
+    category: "taba-squishy",
+    image: "/images/products/taba/jellyfish/pink.jpg",
     inStock: true,
   },
   {
@@ -74,25 +101,17 @@ export const tabaSquishy: Product[] = [
     name: "Gummie Bears Taba Squishy Set",
     description:
       "Three colorful gummie bear taba squishies - collect them all!",
-    price: 12.0,
+    price: 4.0,
     category: "taba-squishy",
     image: "/images/products/taba/gummie bears/all three.jpg",
     inStock: true,
   },
-  {
-    id: "taba-jellyfish-pink",
-    name: "Pink Jellyfish Taba Squishy",
-    description: "Adorable pink jellyfish taba squishy - so squishy!",
-    price: 5.0,
-    category: "taba-squishy",
-    image: "/images/products/taba/jellyfish/pink.jpg",
-    inStock: true,
-  },
+
   {
     id: "taba-paws-set",
     name: "Paws Taba Squishy Set",
     description: "Three colorful paw taba squishies - blue, pink, and yellow!",
-    price: 12.0,
+    price: 4.0,
     category: "taba-squishy",
     image: "/images/products/taba/paws/all three.jpg",
     images: [
@@ -107,7 +126,7 @@ export const tabaSquishy: Product[] = [
     id: "taba-paws-blue",
     name: "Blue Paw Taba Squishy",
     description: "Cute blue paw taba squishy - pawsitively adorable!",
-    price: 5.0,
+    price: 2.0,
     category: "taba-squishy",
     image: "/images/products/taba/paws/blue.jpg",
     inStock: true,
@@ -116,7 +135,7 @@ export const tabaSquishy: Product[] = [
     id: "taba-paws-pink",
     name: "Pink Paw Taba Squishy",
     description: "Cute pink paw taba squishy - pawsitively adorable!",
-    price: 5.0,
+    price: 2.0,
     category: "taba-squishy",
     image: "/images/products/taba/paws/pink.jpg",
     inStock: true,
@@ -125,27 +144,9 @@ export const tabaSquishy: Product[] = [
     id: "taba-paws-yellow",
     name: "Yellow Paw Taba Squishy",
     description: "Cute yellow paw taba squishy - pawsitively adorable!",
-    price: 5.0,
+    price: 2.0,
     category: "taba-squishy",
     image: "/images/products/taba/paws/yellow.jpg",
-    inStock: true,
-  },
-  {
-    id: "taba-penguin-black",
-    name: "Black Penguin Taba Squishy",
-    description: "Adorable black penguin taba squishy - waddle into fun!",
-    price: 5.0,
-    category: "taba-squishy",
-    image: "/images/products/taba/penguin/black.jpg",
-    inStock: true,
-  },
-  {
-    id: "taba-piggie-pink",
-    name: "Pink Piggie Taba Squishy",
-    description: "Cute pink piggie taba squishy - oink oink!",
-    price: 5.0,
-    category: "taba-squishy",
-    image: "/images/products/taba/piggie/pink.jpg",
     inStock: true,
   },
 ];
@@ -177,7 +178,7 @@ export const slime: Product[] = [
   },
   {
     id: "slime-dragons",
-    name: "Dragons",
+    name: "Dragon Fruit",
     description: "Bingsu slime with dragon fruit charms.",
     price: 7.0,
     category: "slime",
@@ -332,13 +333,13 @@ export function getProductById(id: string): Product | undefined {
 
 // Helper function to get featured products (for home page)
 export function getFeaturedProducts(): Product[] {
-  // Mix of blob stickers and popular taba squishies
+  // Mix of blob stickers, taba squishies, and slime
   return [
     blobStickers[0], // Frankenstein Blob
     tabaSquishy.find((p) => p.id === "taba-capybara-brown")!,
+    slime.find((p) => p.id === "slime-blue-lemon")!, // Blue Lemon with clay topper
+    slime.find((p) => p.id === "slime-grapalicous")!, // Grapalicous with clay topper
     blobStickers[1], // Witch Blob
-    tabaSquishy.find((p) => p.id === "taba-bunny-blue")!,
-    blobStickers[2], // Pumpkin Patch Blob
     tabaSquishy.find((p) => p.id === "taba-penguin-black")!,
   ];
 }

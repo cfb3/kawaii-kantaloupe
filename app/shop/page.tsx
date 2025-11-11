@@ -76,11 +76,10 @@ export default function ShopPage() {
       {/* Info Section */}
       <div className="max-w-4xl mx-auto mt-16 bg-white rounded-3xl p-8 shadow-lg border-4 border-green text-center">
         <h2 className="text-3xl font-bold text-text-dark mb-4">
-          More Coming Soon!
+          Check Back Often!
         </h2>
         <p className="text-lg text-gray-600">
-          Keep an eye out for new taba squishies and slime products.
-          All blob stickers are available now for just <span className="font-bold text-green">$3.00</span> each!
+          New sticker series, taba squishy colors and characters, and slime options are always being added!
         </p>
       </div>
     </div>

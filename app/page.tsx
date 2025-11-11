@@ -56,11 +56,13 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-text-dark mb-4">About Kawaii Kantaloupe</h2>
         <p className="text-lg text-gray-600 mb-4">
           Hi! I'm an 11-year-old maker who loves creating adorable handmade items.
-          Each blob sticker is carefully crafted with love and creativity.
+          Each product - from blob stickers to taba squishies to slime - is carefully crafted with love and creativity.
         </p>
         <p className="text-lg text-gray-600">
-          All blob stickers are just <span className="font-bold text-green">$3.00</span> each,
-          or get the bundle and save! More items like taba squishies and slime coming soon!
+          Blob stickers start at just <span className="font-bold text-green">$3.00</span>,
+          taba squishies from <span className="font-bold text-green">$2.00</span>,
+          and custom slime from <span className="font-bold text-green">$7.00</span>.
+          Check out our bundles to save even more!
         </p>
       </section>
     </div>
