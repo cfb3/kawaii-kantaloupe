@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
-import { Product } from '@/types';
+import { Product, Series, getSeriesDisplayText } from '@/types';
 import Button from './Button';
 import Card from './Card';
 import { useCart } from '@/context/CartContext';
@@ -22,6 +22,20 @@ export default function ProductCard({ product }: ProductCardProps) {
     addToCart(product, 1);
     setJustAdded(true);
     setTimeout(() => setJustAdded(false), 2000); // Reset after 2 seconds
+  };
+
+  // Get color for series
+  const getSeriesColor = (series: Series) => {
+    switch (series) {
+      case Series.Halloween:
+        return 'text-orange-500';
+      case Series.One:
+        return 'text-fuchsia-500'; // magenta
+      case Series.Two:
+        return 'text-rose-300'; // pastel red
+      default:
+        return 'text-gray-600';
+    }
   };
 
   // Use images array if available, otherwise fall back to single image
@@ -124,6 +138,14 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Product Info */}
       <div className="flex-1 flex flex-col">
         <h3 className="text-xl font-bold text-text-dark mb-2">{product.name}</h3>
+        {product.series && (
+          <p className={`text-base font-semibold mb-2 ${getSeriesColor(product.series)}`}>
+            {getSeriesDisplayText(product.series) === product.series
+              ? `Series: ${getSeriesDisplayText(product.series)}`
+              : getSeriesDisplayText(product.series)
+            }
+          </p>
+        )}
         <p className="text-sm text-gray-600 mb-4 flex-1">{product.description}</p>
 
         {/* Price and Add to Cart */}

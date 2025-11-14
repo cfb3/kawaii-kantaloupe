@@ -1,6 +1,26 @@
 // Product types
 export type ProductCategory = 'blob-sticker' | 'taba-squishy' | 'slime' | 'package';
 
+export enum Series {
+  One = "One",
+  Two = "Two",
+  Halloween = "Halloween"
+}
+
+// Helper function to get display text for series
+export function getSeriesDisplayText(series: Series): string {
+  switch (series) {
+    case Series.Halloween:
+      return "Halloween Special";
+    case Series.One:
+      return "One";
+    case Series.Two:
+      return "Two";
+    default:
+      return series;
+  }
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -11,6 +31,7 @@ export interface Product {
   images?: string[]; // Optional array of images for carousel
   inStock: boolean;
   isPlaceholder?: boolean; // For future products (taba squishies, slime)
+  series?: Series; // Optional series for blob stickers
   // Slime-specific fields
   slimeType?: string; // e.g., "Bingsu", "Snow", "Jelly", "Clay", or combinations like "Clay and Jelly"
   bigCharms?: string[]; // Optional array of big charm names

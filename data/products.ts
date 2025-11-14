@@ -1,4 +1,4 @@
-import { Product, PackageProduct, DecorationBlob } from "@/types";
+import { Product, PackageProduct, DecorationBlob, Series } from "@/types";
 
 // Blob Sticker Products (For Sale)
 export const blobStickers: Product[] = [
@@ -10,6 +10,7 @@ export const blobStickers: Product[] = [
     category: "blob-sticker",
     image: "/images/products/blob/frankenstein/frankenstein1.jpg",
     inStock: true,
+    series: Series.Halloween,
   },
   {
     id: "blob-witch",
@@ -19,6 +20,7 @@ export const blobStickers: Product[] = [
     category: "blob-sticker",
     image: "/images/products/blob/witch/witch1.jpg",
     inStock: true,
+    series: Series.Halloween,
   },
   {
     id: "blob-pumpkin-patch",
@@ -28,6 +30,28 @@ export const blobStickers: Product[] = [
     category: "blob-sticker",
     image: "/images/products/blob/pumpkin patch/pumkin patch1.jpg",
     inStock: true,
+    series: Series.Halloween,
+  },
+
+  {
+    id: "blob-pirate",
+    name: "Pirate Blob",
+    description: "Ahoy! Adventurous pirate blob ready to sail the seas!",
+    price: 3.0,
+    category: "blob-sticker",
+    image: "/images/products/blob/pirate/IMG_0089.jpeg",
+    inStock: true,
+    series: Series.Halloween,
+  },
+  {
+    id: "blob-dracula",
+    name: "Dracula Blob",
+    description: "Spooky vampire blob with fangs - fang-tastic!",
+    price: 3.0,
+    category: "blob-sticker",
+    image: "/images/products/blob/dracula/IMG_0088.jpeg",
+    inStock: true,
+    series: Series.One,
   },
 ];
 
