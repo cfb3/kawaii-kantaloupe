@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import ProductCard from '@/components/ProductCard';
 import CantaloupeDecoration from '@/components/CantaloupeDecoration';
+import SeriesDropdown from '@/components/SeriesDropdown';
 import { blobStickers, tabaSquishy, slime } from '@/data/products';
-import { ProductCategory, Series, getSeriesDisplayText } from '@/types';
+import { ProductCategory, Series } from '@/types';
 
 export default function ShopPage() {
   const [filter, setFilter] = useState<ProductCategory | 'all'>('all');
@@ -66,67 +67,12 @@ export default function ShopPage() {
 
         {/* Series Filter (only show when Blob Stickers is selected) */}
         {filter === 'blob-sticker' && (
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col items-center">
             <h3 className="text-lg font-semibold text-text-dark mb-3 text-center">Filter by Series:</h3>
-            <div className="flex flex-wrap gap-3 justify-center">
-              <button
-                onClick={() => setSeriesFilter('all')}
-                className={`
-                  px-5 py-2 rounded-full font-semibold transition-all duration-300
-                  ${seriesFilter === 'all'
-                    ? 'bg-pink text-white shadow-lg'
-                    : 'bg-white text-text-dark border-2 border-pink hover:bg-pink hover:text-white'
-                  }
-                `}
-              >
-                All Series
-              </button>
-              <button
-                onClick={() => setSeriesFilter(Series.Halloween)}
-                className={`
-                  px-5 py-2 rounded-full font-semibold transition-all duration-300
-                  ${seriesFilter === Series.Halloween
-                    ? 'bg-orange-500 text-white shadow-lg'
-                    : 'bg-white text-orange-500 border-2 border-orange-500 hover:bg-orange-500 hover:text-white'
-                  }
-                `}
-              >
-                {getSeriesDisplayText(Series.Halloween) === Series.Halloween
-                  ? `Series ${getSeriesDisplayText(Series.Halloween)}`
-                  : getSeriesDisplayText(Series.Halloween)
-                }
-              </button>
-              <button
-                onClick={() => setSeriesFilter(Series.One)}
-                className={`
-                  px-5 py-2 rounded-full font-semibold transition-all duration-300
-                  ${seriesFilter === Series.One
-                    ? 'bg-fuchsia-500 text-white shadow-lg'
-                    : 'bg-white text-fuchsia-500 border-2 border-fuchsia-500 hover:bg-fuchsia-500 hover:text-white'
-                  }
-                `}
-              >
-                {getSeriesDisplayText(Series.One) === Series.One
-                  ? `Series ${getSeriesDisplayText(Series.One)}`
-                  : getSeriesDisplayText(Series.One)
-                }
-              </button>
-              <button
-                onClick={() => setSeriesFilter(Series.Two)}
-                className={`
-                  px-5 py-2 rounded-full font-semibold transition-all duration-300
-                  ${seriesFilter === Series.Two
-                    ? 'bg-rose-300 text-white shadow-lg'
-                    : 'bg-white text-rose-300 border-2 border-rose-300 hover:bg-rose-300 hover:text-white'
-                  }
-                `}
-              >
-                {getSeriesDisplayText(Series.Two) === Series.Two
-                  ? `Series ${getSeriesDisplayText(Series.Two)}`
-                  : getSeriesDisplayText(Series.Two)
-                }
-              </button>
-            </div>
+            <SeriesDropdown
+              value={seriesFilter}
+              onChange={setSeriesFilter}
+            />
           </div>
         )}
       </div>
